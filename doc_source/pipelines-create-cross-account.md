@@ -227,7 +227,7 @@ These policies are specific to setting up AWS CodeDeploy resources to be used in
 
 1. After the policy is validated, choose **Apply Policy**\.
 
-1. Create a second policy for AWS KMS where ***arn:aws:kms:us\-east\-1:012ID\_ACCOUNT\_A:key/2222222\-3333333\-4444\-556677EXAMPLE*** is the ARN of the customer\-managed key created in *AccountA* and configured to allow *AccountB* to use it:
+1. Create a second policy for AWS KMS where ***arn:aws:kms:us\-east\-1:012ID\_ACCOUNT\_A:key/2222222\-3333333\-4444\-556677EXAMPLE*** is the ARN of the customer\-managed key created in *AccountA* (or the ARN of its alias) and configured to allow *AccountB* to use it:
 
    ```
    {
@@ -356,7 +356,7 @@ You cannot use the AWS CodePipeline console to create or edit a pipeline that us
 
    The output is sent to the *pipeline\.json* file\.
 
-1. Open the JSON file in any plain\-text editor\. After `"type": "S3"` in the artifact store, add the KMS encryptionKey, ID, and type information where *codepipeline\-us\-east\-2\-1234567890* is the name of the Amazon S3 bucket used to store artifacts for the pipeline and ***arn:aws:kms:us\-east\-1:012ID\_ACCOUNT\_A:key/2222222\-3333333\-4444\-556677EXAMPLE*** is the ARN of the customer\-managed key you just created:
+1. Open the JSON file in any plain\-text editor\. After `"type": "S3"` in the artifact store, add the KMS encryptionKey, ID, and type information where *codepipeline\-us\-east\-2\-1234567890* is the name of the Amazon S3 bucket used to store artifacts for the pipeline and ***arn:aws:kms:us\-east\-1:012ID\_ACCOUNT\_A:key/2222222\-3333333\-4444\-556677EXAMPLE*** is the ARN of the customer\-managed key you just created (or the ARN of its alias):
 
    ```
    {
